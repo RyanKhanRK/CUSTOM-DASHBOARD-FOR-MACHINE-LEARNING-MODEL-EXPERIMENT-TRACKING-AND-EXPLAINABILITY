@@ -70,7 +70,7 @@ def regression_run_linear(experiment_type, run_type, dataset_level):
         mlflow.log_artifact("data.csv", artifact_path="data")
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -119,7 +119,7 @@ def regression_random_forest(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -170,7 +170,7 @@ def regression_gbt_regressor(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -217,7 +217,7 @@ def regression_decision_tree(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -309,7 +309,7 @@ def clustering_gaussian_mixture(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             gmm,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
     
@@ -350,7 +350,7 @@ def clustering_kmeans(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             kmeans,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -395,7 +395,7 @@ def clustering_lda(experiment_type, run_type, dataset_level):
         mlflow.log_artifact("data.csv", artifact_path="data")
         mlflow.sklearn.log_model(
             lda,
-            name="model",
+            artifact_path="model",
             input_example=X[:5]
         )
 
@@ -403,7 +403,7 @@ def classification_decision_tree(experiment_type, run_type, dataset_level):
     df_processed = pd.read_csv("data.csv")
 
     # Create a copy to avoid modifying original data
-    df = df.copy()
+    df = df_processed.copy()
     
     # Encode categorical columns
     le_sex = LabelEncoder()
@@ -454,7 +454,7 @@ def classification_decision_tree(experiment_type, run_type, dataset_level):
         mlflow.log_artifact("data.csv", artifact_path="data")
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -515,7 +515,7 @@ def classification_LogisticRegression(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -526,7 +526,7 @@ def classification_LogisticRegression(experiment_type, run_type, dataset_level):
 def classification_random_forest(experiment_type, run_type, dataset_level):
     df_processed = pd.read_csv("data.csv")
 
-    df = df.copy()
+    df = df_processed.copy()
     
     le_sex = LabelEncoder()
     le_embarked = LabelEncoder()
@@ -579,7 +579,7 @@ def classification_random_forest(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -590,7 +590,7 @@ def classification_random_forest(experiment_type, run_type, dataset_level):
 def classification_GBT_Classifier(experiment_type, run_type, dataset_level):
     df_processed = pd.read_csv("data.csv")
     
-    df = df.copy()
+    df = df_processed.copy()
     
     le_sex = LabelEncoder()
     le_embarked = LabelEncoder()
@@ -644,7 +644,7 @@ def classification_GBT_Classifier(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -704,7 +704,7 @@ def classification_LinearSVC(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -765,7 +765,7 @@ def classification_MLPC(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             pipeline,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -820,7 +820,7 @@ def classification_NaiveBayes(experiment_type, run_type, dataset_level):
         mlflow.log_artifact("data.csv", artifact_path="data")
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
@@ -876,7 +876,7 @@ def classification_OVR(experiment_type, run_type, dataset_level):
 
         mlflow.sklearn.log_model(
             model,
-            name="model",
+            artifact_path="model",
             input_example=input_example
         )
 
