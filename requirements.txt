@@ -1,0 +1,11 @@
+mlflow
+pandas
+numpy
+scikit-learn
+scipy
+shap
+matplotlib
+streamlit
+flask
+flask-cors
+requests
