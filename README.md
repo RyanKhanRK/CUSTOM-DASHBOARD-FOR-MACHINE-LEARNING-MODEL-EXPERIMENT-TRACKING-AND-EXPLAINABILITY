@@ -111,11 +111,34 @@ The system is designed for academic and research use, focusing on reproducibilit
 
 ### Execution Steps
 
-Activate your virtual environment before running the commands below.
+### 0. Create and Activate a Virtual Environment
+Before running the project, create and activate a Python virtual environment to isolate the project dependencies.
+
+Create the virtual environment:
+```bash
+python3 -m venv venv
+```
+
+Activate the virtual environment:
+On macOS / Linux:
+```bash
+source venv/bin/activate
+```
+
+On Windows:
+```bash
+venv\Scripts\activate
+```
+
 
 #### 1. Start the CORS Proxy
 ```bash
 python cors_proxy.py
+```
+
+Once activated, install the required dependencies (if applicable):
+```bash
+pip install -r requirements.txt
 ```
 
 #### 2. Start the Frontend Server
